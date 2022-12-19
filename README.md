@@ -16,6 +16,4 @@ This portfolio describes some of the work I have accomplished in this course in 
   Learning goal:
 2. Required revision: HW 4
   Learning goal:
-3. Revision: HW 5
-  Learning goal:
-4. 
+3. MNIST
