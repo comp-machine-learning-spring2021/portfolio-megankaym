@@ -34,6 +34,10 @@ Will transformations on the MNIST data improve the model's resilience to adversa
 3. Obtain the performance of a model that does train/validate with Pytorch transformations
 4. Evaluate the model's performace after an adversarial attack to determine if Pytorch transformations can alleviate adversarial attacks.
 
+
+This coding component was conducted in a Google Colab notebook for ease of use: https://colab.research.google.com/drive/1n71YyiQ64Iy8KIdEIosDR_0U4ngBOCD6?usp=sharing
+
+
 # ----Results----
 
 Please refer to the results.pdf file in this directory to see the evaluation.
