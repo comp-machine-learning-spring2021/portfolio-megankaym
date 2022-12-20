@@ -94,33 +94,33 @@ For each homework assignment, you will need to fill in two self-evaluation rubri
 |  Q  | Topic                         | No Attempt | Partial | Complete | 
 |-----|-----------------------------  |------------|---------|----------|
 |  1  | Creating $k$-means...         |  ------    |  ------ |  ------  |  
-| ... | Follows pseudo code (lab 3)   |            |         |          | 
-| ... | Uses index trick              |            |         |          |   
-| ... | Handles more than 2 groups    |            |         |          |  
-|  2  | Measure of goodness           |            |         |          |
-| ..  | Looping $k$means function     |            |         |          |
+| ... | Follows pseudo code (lab 3)   |            |         |     X     | 
+| ... | Uses index trick              |            |         |     X     |   
+| ... | Handles more than 2 groups    |            |         |     X     |  
+|  2  | Measure of goodness           |            |         |     X     |
+| ..  | Looping $k$means function     |            |         |     X     |
 | ... | Selects $k$ from goodness for:|  --------- |  ------ |  ------  |
-| ... | - different sets of variables |            |         |          |
-| ... | - based on plots (part b)     |            |         |          |                
-|  3  | Articulate limits of $k$-means|            |         |          |
-|  4  | Local tests                   |            |         |          |
-| ... | GitHub Actions                |            |         |          |
+| ... | - different sets of variables |            |         |     X     |
+| ... | - based on plots (part b)     |            |         |     X     |                
+|  3  | Articulate limits of $k$-means|            |         |     X     |
+|  4  | Local tests                   |            |         |     X     |
+| ... | GitHub Actions                |            |         |     X     |
 
 
 |  Q  | Topic                         | Have questions about| Could again without help | 
 |-----|-----------------------------  |---------------------|--------------------------|
 |  1  | Creating $k$-means...         |  -----------------  | ---------------------    |  
-| ... | Follows pseudo code (lab 3)   |                     |                          |
-| ... | Uses index trick              |                     |                          |  
-| ... | Handles more than 2 groups    |                     |                          | 
-|  2  | Measure of goodness           |                     |                          |  
-| ..  | Looping $k$means function     |                     |                          | 
+| ... | Follows pseudo code (lab 3)   |                     |           X               |
+| ... | Uses index trick              |                     |           X               |  
+| ... | Handles more than 2 groups    |                     |           X               | 
+|  2  | Measure of goodness           |                     |           X               |  
+| ..  | Looping $k$means function     |                     |           X               | 
 | ... | Selects $k$ from goodness for:|  -----------------  | ---------------------    | 
-| ... | - different sets of variables |                     |                          | 
-| ... | - based on plots (part b)     |                     |                          |
-|  3  | Articulate limits of $k$-means|                     |                          | 
-|  4  | Local tests                   |                     |                          | 
-| ... | GitHub Actions                |                     |                          | 
+| ... | - different sets of variables |                     |           X               | 
+| ... | - based on plots (part b)     |                     |           X               |
+|  3  | Articulate limits of $k$-means|                     |           X               | 
+|  4  | Local tests                   |                     |           X               | 
+| ... | GitHub Actions                |                     |           X               | 
 
 ### Reminders
 * Check your file names carefully. Be sure to set up your directory to ignore and connect 
