@@ -24,6 +24,8 @@ def my_kmeans(nparray, k, random_state):
     return centers, labels
 
 
+#def within_sum_of_squares():
+
 
 def looping_kmeans(nparray, kslist):
     print("kslist", kslist)
@@ -34,7 +36,8 @@ def looping_kmeans(nparray, kslist):
         km_alg = KMeans(n_clusters=k, init="random", random_state = 1, max_iter = 200)
         fit1 = km_alg.fit(nparray)
         cluster_centers = fit1.cluster_centers_
+        print("cluster_centers", cluster_centers)
         label = km_alg.predict(np.array([[1,2]]))
         print("label", label)
-
+    
     return cluster_centers
