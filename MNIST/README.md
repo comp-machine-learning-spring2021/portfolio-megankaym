@@ -1,17 +1,22 @@
-# CSC294 Computational Machine Learning Final Portfolio
-12/11/2022
-
-----About----
-Hi! I'm Megan McKenzie, a senior at Smith College majoring in computer science and minoring in chemistry with a research background in AI. I'm interested in using technology and programming as a tool to solve real world problems like creating software for the field of engineering or improving health outcomes.
-
-This semester, I'm taking Professor Kinnaird's CSC294-01: Computational Machine Learning course. We've practiced using supervised and unsupervised learning for classification and clustering. We covered different machine learning models like kNN, linear regression, decision trees, SVM, k-means, random forest, and more. We also explored using PCA to reduce dimensionality of data, as well as deep learning and bench marking. 
-
-My interests beyond this machine learning course will begin as I enter the tech industry upon graduation this coming May. I'm hoping that I get to apply my machine learning knowledge some way in the future, whether that be part of some data science work or for fun on my own time and curiosity. This knowledge  is so handy, as data is ubiquitous.
+# MNIST Covolutional Neural Network
 
 
-This portfolio describes some of the work I have accomplished in this course in an organized and intentional way that highlights some of my favorite machine learning endeavors.
+The application of machine learning tools is vital for solving real world problems. This component of the portfolio explores the intersection between computer vision and machine learning. 
 
-----Navigation----
+
+# ----Background----
+The Modified National Institute of Standards and Technology, otherwise known as MNIST, database contains 60,000 training and 10,000 testing images of handwritten digits.
+
+A neural network is a class of supervised (all data is labelled*) machine learning algorithms that can find complex patterns and relationships in data to solve complex problems (both classification and regression problems) and enable deep learning.
+
+* A label is the thing a model is trying to predict. For this project, our label is what number is written in an image.
+
+A Convolutional Neural Network, otherwise known as a “Convnet”, is built using neurons** and fully connected layers just like traditional neural networks, but they also have convolutional layers. Convolutional layers contain a set of filters/kernels, parameters of which are to be learned throughout the training. The size of the filters is usually smaller than the actual image. Each filters are applied to the images.
+
+**Neurons are interconnected nodes in a layered structure that resembles the human brain.
+ 
+ 
+# ----Navigation----
 1. Required revision: HW 2
   Learning goal:
 2. Required revision: HW 4
@@ -19,3 +24,6 @@ This portfolio describes some of the work I have accomplished in this course in 
 3. Revision: HW 5
   Learning goal:
 4. 
+
+# Resources
+1. “MNIST Database.” Wikipedia, Wikimedia Foundation, 31 July 2022, https://en.wikipedia.org/wiki/MNIST_database. 
