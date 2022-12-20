@@ -12,7 +12,7 @@ def my_kmeans(nparray, k, random_state):
         cont = True
         while cont:
             distances = distance.cdist(nparray, centers, 'euclidean')
-            labels = np.argmin(distances, axis=1)
+            labels = np.argmin(distances, axis=1) #labels just means clusters here
             current_ind = labels == item
             subset = nparray[current_ind,:]
             subset_mean = np.mean(subset, axis=0)
@@ -39,5 +39,5 @@ def looping_kmeans(nparray, kslist):
         print("cluster_centers", cluster_centers)
         label = km_alg.predict(np.array([[1,2]]))
         print("label", label)
-    
+
     return cluster_centers
