@@ -1,14 +1,12 @@
 import numpy as np 
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 from scipy.spatial import distance
+from sklearn.cluster import KMeans
 
 
 def my_kmeans(nparray, k, random_state):
     df = pd.DataFrame(nparray)
     centers = (df.sample(k, random_state = random_state)).to_numpy()
-
 
     for item in range(k):
         cont = True
@@ -23,40 +21,20 @@ def my_kmeans(nparray, k, random_state):
             else:
                 centers[item] = [subset_mean[0],subset_mean[1]]
     
-
     return centers, labels
 
-#def looping_kmeans(nparray, kslist):
-#    get_data = nparray[]
 
 
+def looping_kmeans(nparray, kslist):
+    print("kslist", kslist)
+    #make array to keep track of corresponding values for each k. loop through each k value
+    #and do k means on them to get the centers with that k
+    #then fit data to that kmeans thing
+    for k in kslist:
+        km_alg = KMeans(n_clusters=k, init="random", random_state = 1, max_iter = 200)
+        fit1 = km_alg.fit(nparray)
+        cluster_centers = fit1.cluster_centers_
+        label = km_alg.predict(np.array([[1,2]]))
+        print("label", label)
 
-
-
-
-"""def my_kmeans(nparray, k, random_state):
-    df = pd.DataFrame(nparray)
-    centers = (df.sample(k, random_state = random_state)).to_numpy()
-    dists = distance.cdist(nparray, centers, 'euclidean')
-    clusters = np.argmin(dists, axis=1)
-
-    whole = []
-    for item in range(k):
-        inds = clusters == item
-        points = []
-        for i in inds:
-            my_avg = np.mean([i for (i, x) in enumerate(inds) if x])
-            points.append(my_avg)
-        whole.append(points)
-    
-    dpoints = pd.DataFrame(whole)
-    print(dpoints)
-
-
-    #in this assignment, the labels are just numeric with index starting at 0
-    labels = []
-    for i in range(k):
-        labels.append(i)
-
-
-    return centers, labels"""
+    return cluster_centers
