@@ -8,7 +8,7 @@ In this assignment, only Within Cluster Sum of Squares is used
 
 # Resources
 
-[1] https://odsc.medium.com/unsupervised-learning-evaluating-clusters-bd47eed175ce
+[1] Science, ODSC - Open Data. “Unsupervised Learning: Evaluating Clusters.” Medium, Medium, 17 Dec. 2018, https://odsc.medium.com/unsupervised-learning-evaluating-clusters-bd47eed175ce. 
 
 
 # Homework 2
