@@ -1,12 +1,14 @@
 
-Another important component of this work is evaluating the clusters. There are several ways to go about this, each with their own advantages. Some examples are Within Cluster Sum of Squares (WCSS) and Between Clusters Sum of Squares (BCSS). Within Cluster Sum of Squares is ____________. It is calculated by __________. Between Clusters Sum of Squares differs from this method in that it ____________. It is calculated by __________ [https://odsc.medium.com/unsupervised-learning-evaluating-clusters-bd47eed175ce]. 
+Another important component of this work is evaluating the clusters. There are several ways to go about this, each with their own advantages. Some examples are Within Cluster Sum of Squares (WCSS) and Between Clusters Sum of Squares (BCSS). Within Cluster Sum of Squares is the total distance between each data point and the cluster center. It is calculated by finding the Euclidean distance between a point and its assigned centroid. This is calculated for every point. Then the values are summed and the sum is divided by the number of points. This will return an average for each cluster. Then, all of the cluter averages are averaged to produce the average Within Cluster Sum of Squares. Between Clusters Sum of Squares differs from this method in that it ____________. It is calculated by __________ [1]. 
 
 In this assignment, only Within Cluster Sum of Squares is used
 
 
 
 
+# Resources
 
+[1] https://odsc.medium.com/unsupervised-learning-evaluating-clusters-bd47eed175ce
 
 
 # Homework 2
