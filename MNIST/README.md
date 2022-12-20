@@ -15,7 +15,7 @@ A Convolutional Neural Network, otherwise known as a “Convnet”, is built usi
 
 **Neurons are interconnected nodes in a layered structure that resembles the human brain.
  
-The original code built a CNN model and performed an adversarial attack, and can be found in the old_code notebook.
+The original code built a CNN model and performed an adversarial attack, and can be found in AE attack.ipynb
 
 It may be helpful to review what an adversarial attack can look like. For example, the white-box attack is when attacker has complete access to the model’s function - i.e. the inputs, outputs, structure, and/or weights. The black-box attack is when the attacker has restricted access to the model, and only knows the inputs and outputs. Misclassification is when the attacker wants incorrect output classification, but disregards the resulting target class, whereas source/target misclassification is when the attacker wants to alter the input data so that the new, incorrect classification results in a specific target class.
 
