@@ -25,16 +25,18 @@ Cross entropy loss [4]
  
 # ----Outline----
 
-The goal of this component is to understand how the CNN was built in detail, as this was not the main focus of the summer project, and actually try to prevent the damage of the attack. Upon my own research, I discovered Pytorch transformations. These are commonly used to transform and alter data, specically images, to produce variability. These transformations could be used to allow for models to have better generalization. If a model is trained to predict the class of difficult or confusing images in addition to the original ones, it will likely perform better in general given that test data is completely new and could be variable [5]. Will transformations on the MNIST data improve the model's resilience to adversarial attacks?
+The goal of this component is to understand how the CNN was built in detail, as this was not the main focus of the summer project, and actually try to prevent the damage of the attack. Upon my own research, I discovered Pytorch transformations. These are commonly used to transform and alter data, specically images, to produce variability. These transformations could be used to allow for models to have better generalization. If a model is trained to predict the class of difficult or confusing images in addition to the original ones, it will likely perform better in general given that test data is completely new and could be variable [5].
 
-1. The performance of a model that does not train/validate with Pytorch transformations
-2. The model's performace after an adversarial attack
-3. The performance of a model that does train/validate with Pytorch transformations
-4. The model's performace after an adversarial attack
+Will transformations on the MNIST data improve the model's resilience to adversarial attacks?
+
+1. Obtain the performance of a model that does not train/validate with Pytorch transformations
+2. Evaluate the model's performace after an adversarial attack
+3. Obtain the performance of a model that does train/validate with Pytorch transformations
+4. Evaluate the model's performace after an adversarial attack to determine if Pytorch transformations can alleviate adversarial attacks.
 
 # ----Results----
 
-
+Please refer to the results.pdf file in this directory to see the evaluation.
 
 # Resources
 1. “MNIST Database.” Wikipedia, Wikimedia Foundation, 31 July 2022, https://en.wikipedia.org/wiki/MNIST_database. 
