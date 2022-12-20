@@ -21,7 +21,7 @@ It may be helpful to review what an adversarial attack can look like. For exampl
 
 In this project, a Fast Gradient Sign Attack (FGSM) was used. It was one of the very first adversarial attacks and is still incredibly common to this day because of it effectiveness. The Fast Gradient Sign Attack is designed to attack neural networks in a particular way, specifically how they learn. They attack a neural network’s gradients. The attack changes the input data based on the backpropagated gradients. In short, it uses gradient of the loss with reference to the input data, then adjusts the input data to maximize the loss [3].
 
-Cross entropy loss [4]
+The loss was calculated using the cross entropy loss function, which measures the performance of a classification model whose output is a probability value between 0 and 1. Cross-entropy loss increases as the predicted probability diverges from the actual label, which means a perfect model would have a loss of 0. [4, 6]
  
 # ----Outline----
 
@@ -44,3 +44,4 @@ Please refer to the results.pdf file in this directory to see the evaluation.
 3. Inkawhich, Nathan. “Adversarial Example Generation.” Adversarial Example Generation - PyTorch Tutorials 1.12.0+cu102 Documentation, https://pytorch.org/tutorials/beginner/fgsm_tutorial.html.
 4. Liusie, Adian. “Intuitively Understanding the Cross Entropy Loss.” YouTube, YouTube, 4 July 2021, https://www.youtube.com/watch?v=Pwgpl9mKars.
 5. “Transforming and Augmenting Images¶.” Transforming and Augmenting Images - Torchvision Main Documentation, https://pytorch.org/vision/stable/transforms.html. 
+6. https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html
