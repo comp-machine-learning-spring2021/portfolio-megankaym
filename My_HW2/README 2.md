@@ -1,3 +1,14 @@
+
+Another important component of this work is evaluating the clusters. There are several ways to go about this, each with their own advantages. Some examples are Within Cluster Sum of Squares (WCSS) and Between Clusters Sum of Squares (BCSS). Within Cluster Sum of Squares is ____________. It is calculated by __________. Between Clusters Sum of Squares differs from this method in that it ____________. It is calculated by __________ [https://odsc.medium.com/unsupervised-learning-evaluating-clusters-bd47eed175ce]. 
+
+In this assignment, only Within Cluster Sum of Squares is used
+
+
+
+
+
+
+
 # Homework 2
 
 Welcome to your second homework assignment for CSC 294. In this assignment, you will: 
