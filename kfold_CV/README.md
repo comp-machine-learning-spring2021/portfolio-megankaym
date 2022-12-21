@@ -6,7 +6,7 @@ k-fold Cross Validation is a evaluation method that allows the programmer to see
 
 
 # Results
-There were 7 different tests run with the functions created for this coding component. First, we tested single inputs and then later tested different combinations of input variables. Interestingly, all tests resulted in the same computed error, 200 when k=5. When k=10, these tests all returned an error of 100. When k=200, the error output was 5 for all of them. It seems like the errors are inversely proportional to the chosen k. 
+There were 7 different tests run with the functions created for this coding component. First, I tested single inputs and then later tested different combinations of input variables. Interestingly, all tests resulted in the same computed error, 200 when k=5. When k=10, these tests all returned an error of 100. When k=200, the error output was 5 for all of them. It seems like the errors are inversely proportional to the chosen k. 
 
 1. neuroticism
 2. performance
