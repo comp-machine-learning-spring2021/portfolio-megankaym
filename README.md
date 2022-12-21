@@ -17,5 +17,3 @@ This portfolio describes some of the work I have accomplished in this course in 
 1. Required revision: HW 2 k-means
 2. Required revision: HW 5 k-foldCV
 3. MNIST
-
-A special thank you to Professor Kinnaird
