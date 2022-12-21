@@ -1,12 +1,13 @@
-import pandas as pd
 import numpy as np
-from sklearn import linear_model
-import math
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
 
 def compute_mse(truth_vec, predict_vec):
     return np.mean((truth_vec - predict_vec)**2)
 
-
+def classify(pred, ans):
+    incorrect = np.sum(ans[:] != pred[:])
+    return np.mean(incorrect/ans.shape[0])
 
 def data_wrangle(dataset_file, lst):
     #extract data from the input file
@@ -26,68 +27,78 @@ def data_wrangle(dataset_file, lst):
     col_names = list(data.columns)
     data = data.to_numpy()
     return col_names, data
+				
 
-
-
-def kfold_CV(data, col_names, inputs, outputs, k):
-
-    #extract the input and output variables from the full dataset
-    inputdata = []
-    for input in inputs:
-        ind = col_names.index(input)
-        inputdata.append(data[ind])
-
-    outputdata = []
-    #if outputs was a list instead of a string :)
-    #for output in outputs:
-    #    ind = col_names.index(output)
-    #    outputdata.append(data[ind])
-    #instead, since the input for outputs is just a string, we'll use this:
-    outputdata.append(data[:,-1])
-
-    #divide the data into the k folds. split_dataframes is a list of the data sections now
-    split_dataframes = []
-    index_to_split = len(data) // k
-    start = 0
-    end = index_to_split
-    for split in range(k):
-        temporary_df = data[start:end, :]
-        split_dataframes.append(temporary_df)
-        start += index_to_split
-        end += index_to_split
+def kfold_CV(data, col_names, inputs, output, k):
+    split_dataframe = np.array_split(data, k)
+    mylist = []
+    for x in inputs:
+        start = col_names.index(x)
+        mylist.append(start)
+    end = col_names.index(output)
     
-    
-    #output only the cross-validated error as a float #from lab 13
-    # Initialize the list of errors
-    test_errors = []
+    cverror = []
+    for i in range(k):
+        test = split_dataframe.pop(i)
+        train = np.vstack(split_dataframe)
 
-    # Loop over all points in the data set, letting each act as the test set
-    for split in split_dataframes:
-
-        # Split data into train and test
-        test_data = split.T
-        train_data = split_dataframes - split
-        #train_data = list(set(test_data.tolist()).difference(set(train_data.tolist())))
-        train_data = np.vstack(train_data).T
-        #print("=======================test_data", test_data.shape, test_data)
-        #print("=======================train_data", train_data.shape, train_data)
-        
-        
-        # Create, train, predict, and compute mse
-        test_errors = []
-        lm = linear_model.LinearRegression()
-        #print("TRAIN DATA SHAPE: ", train_data.T.shape)
-        #print("TEST DATA SHAPE: ", test_data.T.shape)
-        mod = lm.fit(test_data, train_data)
-
-        test_preds = mod.predict(test_data)
-        test_error = compute_mse(test_preds.T, test_data.T[-1])
-        test_errors.append(test_error)
-        
-    # Compute the cross-val error
-    return np.mean(test_errors)
+        dt = DecisionTreeClassifier(ccp_alpha = 0.001, max_depth=5)
+        dt.fit(train[:, mylist], train[:, end].astype(int))
+        predictions = dt.predict(test[:, mylist])
+        cverror.append(classify(predictions, test[:, [end]]))
+        split_dataframe.insert(i, test)
+    return np.mean(cverror)
 
 
-cols = ['neuroticism']
+
+
+#tests
+
+# neuroticism
+
+cols = ['neuroticism', 'salary']
 data_np = data_wrangle("hw5data.csv",['neuroticism'])[1]
-CV = kfold_CV(data_np, cols, ['neuroticism'], 'salary',12)
+CV = kfold_CV(data_np, cols, ['neuroticism'], 'salary', 5)
+print("neuroticism", CV)
+
+# performance
+
+cols = ['neuroticism', 'performance', 'job', 'salary']
+data_np = data_wrangle("hw5data.csv",['performance'])[1]
+CV = kfold_CV(data_np, cols, ['performance'], 'salary', 5)
+print("performance", CV)
+
+# job
+
+cols = ['neuroticism', 'performance', 'job', 'salary']
+data_np = data_wrangle("hw5data.csv",['job'])[1]
+CV = kfold_CV(data_np, cols, ['job'], 'salary', 5)
+print("job", CV)
+
+# neuroticism & performance
+
+cols = ['neuroticism', 'performance', 'job', 'salary']
+data_np = data_wrangle("hw5data.csv",['neuroticism', 'performance'])[1]
+CV = kfold_CV(data_np, cols, ['neuroticism', 'performance'], 'salary', 5)
+print("neuroticism & performance", CV)
+
+# neuroticism & job
+
+cols = ['neuroticism', 'performance', 'job', 'salary']
+data_np = data_wrangle("hw5data.csv",['neuroticism', 'job'])[1]
+CV = kfold_CV(data_np, cols, ['neuroticism', 'job'], 'salary', 5)
+print("neuroticism & job", CV)
+
+# performance & job
+
+cols = ['neuroticism', 'performance', 'job', 'salary']
+data_np = data_wrangle("hw5data.csv",['performance', 'job'])[1]
+CV = kfold_CV(data_np, cols, ['performance', 'job'], 'salary', 5)
+print("performance & job", CV)
+
+# neuroticism & performance & job
+
+cols = ['neuroticism', 'performance', 'job', 'salary']
+data_np = data_wrangle("hw5data.csv",['neuroticism', 'performance', 'job'])[1]
+CV = kfold_CV(data_np, cols, ['neuroticism', 'performance', 'job'], 'salary', 5)
+print("neuroticism & performance & job", CV)
