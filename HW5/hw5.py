@@ -88,6 +88,6 @@ def kfold_CV(data, col_names, inputs, outputs, k):
     return np.mean(test_errors)
 
 
-#cols = ['neuroticism', 'performance', 'job', 'salary']
-#data_np = data_wrangle("hw5data.csv",['job'])[1]
-#CV = kfold_CV(data_np, cols, ['job'], 'salary',12)
+cols = ['neuroticism']
+data_np = data_wrangle("hw5data.csv",['neuroticism'])[1]
+CV = kfold_CV(data_np, cols, ['neuroticism'], 'salary',12)

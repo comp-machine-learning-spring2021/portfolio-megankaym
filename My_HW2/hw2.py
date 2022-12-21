@@ -24,20 +24,30 @@ def my_kmeans(nparray, k, random_state):
     return centers, labels
 
 
-#def within_sum_of_squares():
+def within_sum_of_squares(data, k):
+    total = 0
+
+    km_alg_norm = KMeans(n_clusters=k, init="random",random_state = 1, max_iter = 200)
+    fit2 = km_alg_norm.fit(data) 
+
+    for i in range (0, k):
+        cluster_center = [fit2.cluster_centers_[i]]
+        inds = (fit2.labels_ == i)
+        cluster_points = data[inds,:]
+        
+        cluster_spread = distance.cdist(cluster_points, cluster_center, 'euclidean')
+        cluster_total = np.sum(cluster_spread)
+
+        total += cluster_total
+    return total
 
 
 def looping_kmeans(nparray, kslist):
-    print("kslist", kslist)
-    #make array to keep track of corresponding values for each k. loop through each k value
-    #and do k means on them to get the centers with that k
-    #then fit data to that kmeans thing
+    list_of_goodness = []
     for k in kslist:
         km_alg = KMeans(n_clusters=k, init="random", random_state = 1, max_iter = 200)
         fit1 = km_alg.fit(nparray)
-        cluster_centers = fit1.cluster_centers_
-        print("cluster_centers", cluster_centers)
-        label = km_alg.predict(np.array([[1,2]]))
-        print("label", label)
-
-    return cluster_centers
+        goodness = within_sum_of_squares(nparray, k)
+        list_of_goodness.append(goodness)
+    print("list_of_goodness", list_of_goodness)
+    return list_of_goodness
