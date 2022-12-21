@@ -1,6 +1,7 @@
 import numpy as np 
 import pandas as pd
 from scipy.spatial import distance
+import sklearn
 from sklearn.cluster import KMeans
 
 
